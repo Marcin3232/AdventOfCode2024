@@ -1,11 +1,11 @@
-﻿using Common.Interfaces;
+﻿using Common.Abstracts;
 using FileManager;
 
 namespace Day1;
 
-public class DayOne : IDayProject
+public class DayOne : BaseDayProject
 {
-    public void Start()
+    protected override void Execute()
     {
         FileSelector fileSelector = new FileSelector();
         var input = fileSelector.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "data.txt"));
