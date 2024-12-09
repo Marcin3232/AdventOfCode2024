@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\1\inputDayOne.txt" />
+    <None Remove="Resources\2\inputDayTwo.txt" />
+    <None Remove="Resources\4\inputDayFour.txt" />
+    <None Remove="Resources\5\inputDayFive.txt" />
+    <None Remove="Resources\6\inputDaySix.txt" />
+    <None Remove="Resources\7\inputDaySeven.txt" />
+    <None Remove="Resources\8\inputDayEight.txt" />
+    <None Remove="Resources\9\inputDayNine.txt" />
+    <None Remove="Resources\inputDayThree.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\3\inputDayThree.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\1\inputDayOne.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\2\inputDayTwo.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\4\inputDayFour.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\5\inputDayFive.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\6\inputDaySix.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\7\inputDaySeven.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\8\inputDayEight.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\9\inputDayNine.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\10\" />
+    <Folder Include="Resources\11\" />
+    <Folder Include="Resources\12\" />
+    <Folder Include="Resources\13\" />
+    <Folder Include="Resources\14\" />
+    <Folder Include="Resources\15\" />
+    <Folder Include="Resources\16\" />
+    <Folder Include="Resources\17\" />
+    <Folder Include="Resources\18\" />
+    <Folder Include="Resources\19\" />
+    <Folder Include="Resources\20\" />
+    <Folder Include="Resources\21\" />
+    <Folder Include="Resources\22\" />
+    <Folder Include="Resources\23\" />
+    <Folder Include="Resources\24\" />
+    <Folder Include="Resources\25\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FileManager\FileManager.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -8,13 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BaseDay\BaseDay.csproj" />
-    <ProjectReference Include="..\FileManager\FileManager.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Resources\input.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
