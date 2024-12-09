@@ -5,6 +5,13 @@ namespace Common.Abstracts;
 
 public abstract class BaseDayProject : IDayProject
 {
+    public string[] DataSource { get; init; }
+
+    protected BaseDayProject(string[] dataSource)
+    {
+        DataSource = dataSource;
+    }
+
     public void Start()
     {
         var stopwatch = Stopwatch.StartNew();

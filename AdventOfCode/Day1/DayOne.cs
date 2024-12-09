@@ -1,21 +1,16 @@
 ﻿using Common.Abstracts;
-using FileManager;
 
 namespace Day1;
 
 public class DayOne : BaseDayProject
 {
+    public DayOne(string[] dataSource) : base(dataSource)
+    {
+    }
+
     protected override void Execute()
     {
-        FileSelector fileSelector = new FileSelector();
-        var input = fileSelector.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "data.txt"));
-        if (input is not string[] lines)
-        {
-            Console.WriteLine("The data provided is incorrect");
-            return;
-        }
-
-        var task = new SolvingTask(input);
+        var task = new SolvingTask(DataSource);
         var result = task.Task();
 
         if (result is null)
