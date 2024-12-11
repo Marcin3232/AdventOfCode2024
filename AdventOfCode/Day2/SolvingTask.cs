@@ -1,60 +1,59 @@
-﻿namespace Day2
+﻿namespace Day2;
+
+internal class SolvingTask
 {
-    internal class SolvingTask
+    public (int safeReports, int safeReportsWithDampener) Task(string[] lines)
     {
-        public (int safeReports, int safeReportsWithDampener) Task(string[] lines)
+        int safeReports = 0;
+        int safeReportsWithDampener = 0;
+
+        foreach (string line in lines)
         {
-            int safeReports = 0;
-            int safeReportsWithDampener = 0;
+            int[] levels = line.Split(' ').Select(int.Parse).ToArray();
 
-            foreach (string line in lines)
+            if (IsSafe(levels))
             {
-                int[] levels = line.Split(' ').Select(int.Parse).ToArray();
-
-                if (IsSafe(levels))
-                {
-                    safeReports++;
-                    safeReportsWithDampener++;
-                }
-                else if (IsSafeWithDampener(levels))
-                {
-                    safeReportsWithDampener++;
-                }
+                safeReports++;
+                safeReportsWithDampener++;
             }
-
-            return (safeReports, safeReportsWithDampener);
+            else if (IsSafeWithDampener(levels))
+            {
+                safeReportsWithDampener++;
+            }
         }
 
-        private bool IsSafe(int[] levels)
+        return (safeReports, safeReportsWithDampener);
+    }
+
+    private bool IsSafe(int[] levels)
+    {
+        bool isIncreasing = true;
+        bool isDecreasing = true;
+
+        for (int i = 1; i < levels.Length; i++)
         {
-            bool isIncreasing = true;
-            bool isDecreasing = true;
+            int diff = levels[i] - levels[i - 1];
 
-            for (int i = 1; i < levels.Length; i++)
-            {
-                int diff = levels[i] - levels[i - 1];
+            if (diff < -3 || diff > 3 || diff == 0)
+                return false;
 
-                if (diff < -3 || diff > 3 || diff == 0)
-                    return false;
-
-                if (diff < 0) isIncreasing = false;
-                if (diff > 0) isDecreasing = false;
-            }
-
-            return isIncreasing || isDecreasing;
+            if (diff < 0) isIncreasing = false;
+            if (diff > 0) isDecreasing = false;
         }
 
-        private bool IsSafeWithDampener(int[] levels)
+        return isIncreasing || isDecreasing;
+    }
+
+    private bool IsSafeWithDampener(int[] levels)
+    {
+        for (int i = 0; i < levels.Length; i++)
         {
-            for (int i = 0; i < levels.Length; i++)
-            {
-                var modifiedLevels = levels.Where((_, index) => index != i).ToArray();
+            var modifiedLevels = levels.Where((_, index) => index != i).ToArray();
 
-                if (IsSafe(modifiedLevels))
-                    return true;
-            }
-
-            return false;
+            if (IsSafe(modifiedLevels))
+                return true;
         }
+
+        return false;
     }
 }

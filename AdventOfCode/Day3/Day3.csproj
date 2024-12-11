@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BaseDay\BaseDay.csproj" />
+  </ItemGroup>
+
 </Project>

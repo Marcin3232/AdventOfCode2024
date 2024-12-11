@@ -3,6 +3,7 @@ using DataFactory;
 using DataFactory.Interfaces;
 using Day1;
 using Day2;
+using Day3;
 using DaysFactory.Enums;
 
 namespace DaysFactory;
@@ -19,6 +20,7 @@ public class Factory : IFactory
     {
         DayNumber.DayOne => new DayOne(GetData(dayNumber)),
         DayNumber.DayTwo => new DayTwo(GetData(dayNumber)),
+        DayNumber.DayThree => new DayThree(GetData(dayNumber)),
         _ => null
     };
 
